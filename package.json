@@ -1,7 +1,7 @@
 {
   "name": "atlas-over-time",
   "version": "1.0.0",
-  "description": "Made with create-react-library",
+  "description": "Modular stack chart for visualizing import/export data over time",
   "author": "wsoeltz",
   "license": "MIT",
   "repository": "cid-harvard/atlas-over-time",
