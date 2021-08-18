@@ -1,0 +1,67 @@
+.tick {
+  --translation: 0;
+  --thickness: 1px;
+  --width: 13px;
+
+  position: absolute;
+  background-color: #ccc;
+}
+
+.xTick {
+  top: 0;
+  left: 0;
+  transform: translateX(calc(var(--translation) - 50%));
+  width: var(--thickness);
+  height: var(--width);
+}
+
+.yTick {
+  top: 0;
+  right: 0;
+  transform: translateY(calc(var(--translation) - 50%));
+  width: var(--width);
+  height: var(--thickness);
+}
+
+.label {
+  --translation: 0;
+  --separation-from-axis: 20px;
+
+  position: absolute;
+}
+
+.xLabel {
+  top: calc(var(--separation-from-axis) + 0.5rem);
+  left: 0;
+  transform: translateX(calc(var(--translation) - 50%)) rotate(-65deg);
+}
+
+.yLabel {
+  top: 0;
+  right: var(--separation-from-axis);
+  transform: translateY(calc(var(--translation) - 50%));
+}
+
+.gridline {
+  --thickness: 1px;
+  --translation: 0;
+
+  position: absolute;
+  background-color: #ccc;
+}
+
+.xGridline {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--thickness);
+  transform: translateX(calc(var(--translation) - 50%));
+}
+
+.yGridline {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--thickness);
+  transform: translateY(calc(var(--translation) - 50%));
+}

@@ -1,0 +1,11 @@
+.ribbon {
+  fill: var(--regular-color);
+  transition: fill 350ms ease-in-out;
+  stroke: rgba(45, 45, 55, 0.1);
+
+  &.hoverEnabled {
+    &:hover {
+      fill: var(--emphasis-color);
+    }
+  }
+}
