@@ -12,6 +12,14 @@ import {
   DataSource,
   GraphSubject,
 } from './chart/Utils';
+import styled from 'styled-components/macro';
+
+const Root = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 55px;
+  grid-template-columns: 90px 1fr;
+`;
 
 interface Props {
   ribbons: IRibbon[];
@@ -30,6 +38,8 @@ interface Props {
   hideTooltip: () => void;
   showTooltip: (info: IYearDataPoint) => void;
   onClick: () => void;
+  svgWidth: number;
+  svgHeight: number;
 }
 
 const OverTime = (props: Props) => {
@@ -39,16 +49,16 @@ const OverTime = (props: Props) => {
     layout, tradeDirection, tradeFlow,
     inflationAdjustment, populationAdjustment,
     showTooltip, hideTooltip, onClick,
-    type,
+    type, svgWidth, svgHeight,
   } = props;
 
   const ref = useRef<HTMLDivElement | null>(null);
   const rememberChartRootEl = (el: HTMLDivElement | null) => ref.current = el;
 
   return (
-    <div ref={ref}>
+    <Root ref={ref} style={{width: svgWidth, height: svgHeight}}>
       <Chart
-        svgWidth={800} svgHeight={640}
+        svgWidth={svgWidth} svgHeight={svgHeight}
         svgTop={0} svgLeft={0}
         ribbons={ribbons} selected={selected}
         highlighted={highlighted}
@@ -65,7 +75,7 @@ const OverTime = (props: Props) => {
         onYAxisChange={() => {}}
         // onYAxisChange={this.onAdjustmentChange}
       />
-    </div>
+    </Root>
   )
 }
 
