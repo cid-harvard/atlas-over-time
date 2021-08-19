@@ -141,3 +141,10 @@ export interface IRibbon {
   // Layout info for ribbon label:
   textInRibbon: TextInRibbon;
 }
+
+export interface ITooltipMapDatum {
+  id: number;
+  shortLabel: string;
+  longLabel: string;
+  color: string;
+}

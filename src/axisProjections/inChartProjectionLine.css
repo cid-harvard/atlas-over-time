@@ -1,0 +1,27 @@
+.projectionLine {
+  --thickness: 1px;
+  --scale-factor: 1;
+  --stroke-color: rgba(0, 0, 0, 0.25);
+
+  position: absolute;
+}
+
+.vertical {
+  top: var(--distance-from-top);
+  left: 0;
+  bottom: -55px;
+  width: var(--thickness);
+  background-color: var(--stroke-color);
+  transform-origin: left bottom;
+  transform: translateX(calc(var(--translation) - 50%));
+}
+
+.horizontal {
+  height: 0;
+  border-top: 2px var(--stroke-color) dashed;
+  top: 0;
+  left: 0;
+  right: var(--distance-from-right);
+  transform-origin: left top;
+  transform: translateY(calc(var(--translation) - 50%));
+}
