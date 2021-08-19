@@ -1,13 +1,7 @@
 import {
-  scaleLinear,
-} from 'd3-scale';
-import {
   format,
 } from 'd3-format';
-
-const getLinearScale =
-  (domain: [number, number], range: [number, number]) =>
-    scaleLinear<number, number>().domain(domain) .range(range);
+import {getLinearScale} from './Utils';
 
 // Taken from https://stackoverflow.com/a/22885197:
 const log10 = Math.log(10);
@@ -39,6 +33,10 @@ export const formatTradeValue = (input: number) => {
                                         maxNumSignificantDigits;
   return format(`$.${numSignificantDigitsInOutput}s`)(input).replace('G', 'B');
 };
+
+// Convert from number `0.10` to  string `10%`:
+export const formatPercentage =
+  (percentage: number, decimalPlaces: number = 2) => format(`.${decimalPlaces}%`)(percentage);
 
 // Whether each year's data should be an absolute value or percentage relative
 // to the total for that year:

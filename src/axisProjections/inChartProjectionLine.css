@@ -9,7 +9,7 @@
 .vertical {
   top: var(--distance-from-top);
   left: 0;
-  bottom: -55px;
+  bottom: 0;
   width: var(--thickness);
   background-color: var(--stroke-color);
   transform-origin: left bottom;

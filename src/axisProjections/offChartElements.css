@@ -9,7 +9,7 @@
 }
 
 .xTick {
-  top: 55px;
+  top: 0;
   left: 0;
   transform: translateX(calc(var(--translation) - 50%));
   width: var(--thickness);
@@ -39,7 +39,7 @@
 }
 
 .xLabel {
-  top: calc(var(--label-separation-from-axis) + 55px);
+  top: var(--label-separation-from-axis);
   left: 0;
   transform: translateX(calc(var(--translation) - 50%));
 }

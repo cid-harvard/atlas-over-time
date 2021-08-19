@@ -15,6 +15,7 @@ import {
 } from './chart/Utils';
 import styled from 'styled-components/macro';
 import AxisProjections from './axisProjections';
+import createRibbons from './createRibbons';
 
 const leftMargin = 90; // in pixels
 const bottomMargin = 55; // in pixels
@@ -137,6 +138,7 @@ export {
   IDiscriminant,
   DataSource,
   GraphSubject,
+  createRibbons,
 }
 
 export default OverTime;

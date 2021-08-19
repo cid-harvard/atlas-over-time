@@ -1,8 +1,15 @@
 import minBy from 'lodash/minBy';
+import {
+  scaleLinear,
+} from 'd3-scale';
+
+export const getLinearScale =
+  (domain: [number, number], range: [number, number]) =>
+    scaleLinear<number, number>().domain(domain) .range(range);
 
 // These types are used for properties shown in a graph detail overlay, like RCA, distance,
 // opportunity gain:
-enum DisplayValueStatus {
+export enum DisplayValueStatus {
   // Value is present and display that value:
   Show = 'Present',
   // Value is not applicable and display "N/A":
@@ -13,7 +20,7 @@ enum DisplayValueStatus {
   DoNotShow = 'NotPresent',
 }
 
-type DisplayValue = {
+export type DisplayValue = {
   status: DisplayValueStatus.Show,
   value: number | string,
 } | {
@@ -24,7 +31,7 @@ type DisplayValue = {
   status: DisplayValueStatus.ShowNotAvailable;
 };
 
-interface IDetailOverlayRow {
+export interface IDetailOverlayRow {
   label: string;
   value: number | string | DisplayValue;
 }
